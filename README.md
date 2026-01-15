@@ -76,6 +76,7 @@ pg_dump  -h localhost -U younkap  chad_db  > chad_db_backup.sql
 #### Step 4 : Restore database from backup file
 
 1. Create a test database `chad_db_test`
+
 **Open the script:** `4-1-create_test_db`  **then run the commands inside**
 
 2. Restore database from file
@@ -98,7 +99,7 @@ psql -U younkap -h localhost -p 5432 -d chad_db_test -f chad_db_backup.sql
 
 ## License
 
-This project is licensed under the MIT License. See LICENSE for details.
+This project is licensed under the MIT License. See [LICENSE](https://mit-license.org/) for details. 
 
 
 ---
