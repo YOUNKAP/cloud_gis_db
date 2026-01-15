@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+psql -U younkap -h localhost -p 5432 -d chad_db_test -f chad_db_backup.sql
+

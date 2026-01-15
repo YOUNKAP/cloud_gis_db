@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+
+# Log in to the database as postgres user:
+sudo -u postgres psql
+
+#Create a superuser:
+CREATE ROLE younkap LOGIN PASSWORD 'younkap' SUPERUSER;
+\q 
+
+#Log in as the new superuser:
+psql -h localhost -U younkap chad_db
+
+
+CREATE ROLE nina WITH LOGIN PASSWORD 'nina' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION VALID UNTIL 'infinity';
+
+#Assign permission to this read only user:
+GRANT CONNECT ON DATABASE chad_db TO nina;
+GRANT USAGE ON SCHEMA public TO nina;
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO nina;
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO nina;
+
+#Now, log out from the database, and log in again as the new user:
+
+CREATE ROLE duplex WITH LOGIN PASSWORD 'duplex' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION VALID UNTIL 'infinity';
+
+#Assign permission to this read only user:
+GRANT CONNECT ON DATABASE chad_db TO duplex;
+GRANT USAGE ON SCHEMA public TO duplex;
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO duplex;
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO duplex;
+
+#Continue after loading data to DB
+
+#Assign permisson
+psql -h localhost -U younkap chad_db
+GRANT INSERT (code, distnm, nom, radvor,geom) 
+  ON aerodrome  
+  TO nina;
+

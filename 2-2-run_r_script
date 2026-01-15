@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+sudo Rscript load_data.R
+
+

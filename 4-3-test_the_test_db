@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+#Login as usperuser:
+
+psql -h localhost -U nina chad_db_test
+
+
+SELECT id, name_lat, ST_AsText(geometry) FROM plants LIMIT 5;
+
+psql -h localhost -U nina chad_db
+
+
+psql -h localhost -U younkap chad_db
+
+SELECT id, name_lat, ST_AsText(geometry) FROM plants LIMIT 5;
+
+
+
+SELECT id, name_lat, ST_AsText(geometry) FROM plants LIMIT 5;
+
+psql -h localhost -U nina chad_db
+
+
+psql -h localhost -U younkap chad_db
+
+SELECT id, name_lat, ST_AsText(geometry) FROM plants LIMIT 5;
+

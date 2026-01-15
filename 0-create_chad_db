@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Log in to the database as postgres user:
+sudo -u postgres psql
+
+#Create a database named gisdb:
+CREATE DATABASE chad_db;
+
+# Connect to database 
+\c  chad_db;
+
+#Creation de l'extention 
+CREATE EXTENSION postgis;
+
+# Leave 
+\q 

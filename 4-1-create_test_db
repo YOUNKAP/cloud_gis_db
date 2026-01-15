@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+
+sudo -u postgres psql
+
+CREATE DATABASE chad_db_test;
+
+
+#Login as usperuser:
+
+psql -h localhost -U younkap chad_db_test
