@@ -1,27 +1,16 @@
 #!/usr/bin/env bash
 
-#Login as usperuser:
+#Login as usperuser: younkap
+psql -h localhost -U younkap chad_db_test
+SELECT id, code, ST_AsText(geometry) FROM aerodrome LIMIT 5;
+\c
 
+#Login as user : nina
 psql -h localhost -U nina chad_db_test
+SELECT id, code, ST_AsText(geometry) FROM aerodrome LIMIT 5;
+\c
 
-
-SELECT id, name_lat, ST_AsText(geometry) FROM plants LIMIT 5;
-
-psql -h localhost -U nina chad_db
-
-
-psql -h localhost -U younkap chad_db
-
-SELECT id, name_lat, ST_AsText(geometry) FROM plants LIMIT 5;
-
-
-
-SELECT id, name_lat, ST_AsText(geometry) FROM plants LIMIT 5;
-
-psql -h localhost -U nina chad_db
-
-
-psql -h localhost -U younkap chad_db
-
-SELECT id, name_lat, ST_AsText(geometry) FROM plants LIMIT 5;
-
+#Login as readonly  : duplex
+psql -h localhost -U duplex chad_db_test
+SELECT id, code, ST_AsText(geometry) FROM aerodrome LIMIT 5;
+\c
