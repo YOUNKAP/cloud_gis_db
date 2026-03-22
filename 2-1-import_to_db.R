@@ -12,9 +12,9 @@ con = dbConnect(
 )
 
 # Import table to database
-dat = st_read("chad_aerodrome.geojson")
+dat = st_read("zones_controle_v20.geojson")
 st_geometry(dat) = "geom"  ## According to PostGIS convention
-st_write(obj = dat, dsn = con, layer = "aerodrome", delete_layer = TRUE)
+st_write(obj = dat, dsn = con, layer = "ctr", delete_layer = TRUE)
 
 # Disconnect
 dbDisconnect(con)

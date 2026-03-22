@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+#http://localhost/mapbender
+
+http://localhost:9090
+
+# Start docker in iterative mode
+docker exec -it mapbender bash
+
+# Check the connection
+curl http://host.docker.internal:8080/geoserver
+
+# OGC WMS Add source
+http://172.17.0.1:8080/geoserver/cloud_gis_uvci/wms?
+
+http://localhost:8080/geoserver/cloud_gis_uvci/wms?
+
+
+sudo cd /var/lib/tomcat9/webapps/
+
+
+sudo  cp -r /home/duplex/Downloads/uvci_loud_gis_data/airspace_data  /var/lib/tomcat9/webapps/geoserver/data/data
+
+
+sudo  cp -r /home/duplex/Desktop/remote/FTTJ_AD/icons  /var/lib/tomcat9/webapps/geoserver/data
+
+sudo  cp -r /home/duplex/Desktop/remote/FTTJ_AD/icons/100_Navaid_NDB.svg  /var/lib/tomcat9/webapps/geoserver/data/styles
+
+
+ifconfig
+
+http://172.17.0.1:8080/geoserver/cloud_gis_uvci/wms?
+
+http://192.168.0.198:8080/geoserver/cloud_gis_uvci/wms
+
+docker exec -it mapbender bash
+
+curl http://host.docker.internal:8080/geoserver
+
+
+sudo cd /var/lib/tomcat9/webapps/
+
+
+sudo  cp -r /home/duplex/Downloads/uvci_loud_gis_data/airspace_data  /var/lib/tomcat9/webapps/geoserver/data/data
+
+sudo  cp  /home/duplex/Downloads/uvci_loud_gis_data/coutries_voisins.gpkg  /var/lib/tomcat9/webapps/geoserver/data/data
+
+sudo  cp  /home/duplex/Downloads/uvci_loud_gis_data/chad/fttj_fir_dem.tif  /var/lib/tomcat9/webapps/geoserver/data/data
+
+
+
+
+
+sudo  cp -r /home/duplex/Desktop/remote/FTTJ_AD/icons  /var/lib/tomcat9/webapps/geoserver/data
+
+sudo  cp -r /home/duplex/Desktop/remote/FTTJ_AD/icons/100_Navaid_NDB.svg  /var/lib/tomcat9/webapps/geoserver/data/styles
+

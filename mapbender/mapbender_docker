@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+docker image ls  
+
+
+#The first time
+# alias mapbender='docker run -d -p 9090:8080 --name mapbender mapbender/mapbender'
+docker run -d -p 9090:8080 --name mapbender mapbender/mapbender
+#The first time
+# mapbender
+
+# Check if container runing
+docker container ls -a 
+
+#http://localhost:9090/
+
+# Start the container
+docker start mapbender
+
+#Stop the container
+docker stop mapbender
+
+# To remove a containe
+docker container rm container_name  # make sure to use --rm to avoid this
+
+#To remove alias
+docker rm -f mapbender
+
+#http://localhost/mapbender
+
+http://localhost:9090
+
+

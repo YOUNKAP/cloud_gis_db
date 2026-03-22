@@ -2,15 +2,15 @@
 
 #Login as usperuser: younkap
 psql -h localhost -U younkap chad_db_test
-SELECT id, code, ST_AsText(geometry) FROM aerodrome LIMIT 5;
+SELECT id, code, ST_AsText(geom) FROM aerodrome LIMIT 5;
 \c
 
 #Login as user : nina
 psql -h localhost -U nina chad_db_test
-SELECT id, code, ST_AsText(geometry) FROM aerodrome LIMIT 5;
+SELECT id, code, ST_AsText(geom) FROM aerodrome LIMIT 5;
 \c
 
 #Login as readonly  : duplex
 psql -h localhost -U duplex chad_db_test
-SELECT id, code, ST_AsText(geometry) FROM aerodrome LIMIT 5;
+SELECT id, code, ST_AsText(geom) FROM aerodrome LIMIT 5;
 \c

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-sudo Rscript load_data.R
+sudo Rscript 2-1-import_to_db.R
 
 
